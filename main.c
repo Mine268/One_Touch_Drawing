@@ -8,7 +8,7 @@ void search(int cur);
 void printOut();
 
 int main() {
-	scanf_s("%d %d", &n, &m);
+	scanf("%d %d", &n, &m);
 	int i, j;
 	for (i = 1; i <= n; i++)
 	for (j = 1; j <= n; j++)
@@ -16,7 +16,7 @@ int main() {
 
 	int a, b;
 	for (i = 1; i <= m; i++) {
-		scanf_s("%d %d", &a, &b);
+		scanf("%d %d", &a, &b);
 		e[a][b]++;
 		e[b][a]++;
 	}
