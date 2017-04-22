@@ -28,7 +28,7 @@ int main() {
 	}
 
 	int k;
-	for (k = 1; k <= m; k++) // begin the search from each point
+	for (k = 1; k <= n; k++) // begin the search from each point
 		search(k);
 
 	if (flag == false)
