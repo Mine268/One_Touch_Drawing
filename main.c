@@ -4,6 +4,7 @@ typedef enum { false, true } bool;
 
 bool flag = false; // indicate whether the drawing could be drawn in one path
 int e[101][101], n, m, c;
+int path[10001];
 /*
  * 'e' for the picture
  * 'n' for points
@@ -45,6 +46,9 @@ void search(int cur) { // core part
 	int i;
 	if (c == m) { // examine if all the lines have been searched
 		flag = true;
+		for(i = 1; i <= n + 1; i++)
+			printf("%d ", path[i]);
+		printf("%d\n", path[1]); 
 		return;
 	}
 
@@ -53,7 +57,10 @@ void search(int cur) { // core part
 			e[cur][i]--; // means that this line has been searched for one time
 			e[i][cur]--;
 			c++; // means the program has searched one line
+			path[c] = cur; // record the path
+
 			search(i);
+			
 			c--;
 			e[cur][i]++;
 			e[i][cur]++;
