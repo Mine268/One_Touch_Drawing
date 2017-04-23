@@ -46,8 +46,9 @@ void search(int cur) { // core part
 	int i;
 	if (c == m) { // examine if all the lines have been searched
 		flag = true;
-		for(i = 1; i <= n + 1; i++)
-			printf("%d ", path[i]);
+		for(i = 1; i <= n * 2; i++)
+			if(path[i] != 0)
+				printf("%d ", path[i]);
 		printf("%d\n", path[1]); 
 		return;
 	}
